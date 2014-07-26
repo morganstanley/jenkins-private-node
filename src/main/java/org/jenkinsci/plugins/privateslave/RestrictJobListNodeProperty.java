@@ -113,7 +113,6 @@ public class RestrictJobListNodeProperty extends NodeProperty<Node> {
     			return FormValidation.error("Job pattern has not been provided");
     		}
     		try{
-    			Pattern.
     			Pattern.compile(value);
     		}
     		catch(PatternSyntaxException ex)

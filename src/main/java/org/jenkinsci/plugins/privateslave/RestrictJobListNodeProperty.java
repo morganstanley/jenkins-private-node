@@ -2,6 +2,8 @@ package org.jenkinsci.plugins.privateslave;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 import hudson.Extension;
 import hudson.model.Node;
@@ -104,7 +106,23 @@ public class RestrictJobListNodeProperty extends NodeProperty<Node> {
 
             return new RestrictJobListNodeProperty(joblist,nodeContact);
         }
-
+        
+    	public FormValidation doCheckName(@QueryParameter String value) {
+    		if("".equals(value))
+    		{
+    			return FormValidation.error("Job pattern has not been provided");
+    		}
+    		try{
+    			Pattern.
+    			Pattern.compile(value);
+    		}
+    		catch(PatternSyntaxException ex)
+    		{
+    			return FormValidation.error("Regular expression/pattern is not valid");
+    		}
+    		
+    		return FormValidation.ok();
+    	}
         @Override
         public String getDisplayName() {
 

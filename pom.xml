@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>1.460</version><!-- which version of Jenkins is this plugin built against? -->
+  </parent>
+
+  <groupId>org.jenkins-ci.plugins</groupId>
+  <artifactId>private-slave-plugin</artifactId>
+  <version>1.11</version>
+  <packaging>hpi</packaging>
+  <name>Private Slave Plugin</name>
+  <description>This plugin allows an administrator to modify slaves to restrict what jobs can be run on them</description>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/Private+Slave+Plugin</url>
+
+  <developers>
+    <developer>
+      <id>asearle</id>
+      <name>Aaron Searle</name>
+      <email>aaron.searle@morganstanley.com</email>
+    </developer>
+  </developers>
+  <organization>
+      <name>Morgan Stanley</name>
+      <url>http://github.com/organizations/Morgan-Stanley</url>
+      
+
+  </organization>
+  <licenses>
+    <license>
+        <name>mit</name>
+            <url>http://opensource.org/licenses/MIT</url>
+      <distribution/>
+      <comments/>
+    </license>
+  </licenses>
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/private-slave-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/private-slave-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/private-slave-plugin</url>
+  </scm>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.6</source>
+                <target>1.6</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.8.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-core</artifactId>
+      <version>1.4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-module-junit4</artifactId>
+      <version>1.4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-api-mockito</artifactId>
+      <version>1.4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>1.2.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.2.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

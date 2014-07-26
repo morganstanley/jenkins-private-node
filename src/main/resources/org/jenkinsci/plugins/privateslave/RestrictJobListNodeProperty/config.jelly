@@ -1,0 +1,20 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:entry field="nodeContact" title="${%Node Contact Email}">
+        <f:textbox title="Node Contact Email" name="nodeContact" value="${it.getNodeContact()}" />
+    </f:entry>
+    <f:entry field="jobList" title="${%Job/Regex Pattern List}">
+    	<f:repeatable var="jobList" items="${instance.getJobList()}">
+	      <table width="100%">
+	        <f:entry title="${%Name or Pattern}">
+	          <f:textbox name="RestrictedJobNodeProperty" value="${jobList.getName()}" />
+	        </f:entry>
+	        <f:entry title="">
+	          <div align="right">
+	            <f:repeatableDeleteButton />
+	          </div>
+	        </f:entry>
+	      </table>
+	    </f:repeatable>
+  	</f:entry>
+</j:jelly>
